@@ -1,5 +1,5 @@
 import { useRecoilState } from "recoil";
-import { textState } from "../recoil/atoms";
+import { textState } from "../../recoil/characterCounter/atoms";
 
 export function TextInput() {
   const [text, setText] = useRecoilState(textState);

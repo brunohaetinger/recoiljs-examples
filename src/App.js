@@ -1,13 +1,37 @@
+import { useMemo, useState } from "react";
 import { RecoilRoot } from "recoil";
 import "./App.css";
-import { CharacterCounter } from "./components/CharacterCounter";
+import { CharacterCounter } from "./examples/CharacterCounter";
+import { ToDo } from "./examples/ToDo";
 
 function App() {
+  const [currentExampleIndex, setCurrentExampleIndex] = useState(0);
+
+  const examples = useMemo(
+    () => [
+      { label: "Character Counter", content: <CharacterCounter /> },
+      { label: "To Do", content: <ToDo /> },
+    ],
+    []
+  );
+
+  const handleOnChangeExample = (event) => {
+    setCurrentExampleIndex(event.target.value);
+  };
+
   return (
     <div className="App">
-      <RecoilRoot>
-        <CharacterCounter />
-      </RecoilRoot>
+      <h3>Current example:</h3>
+      <select onChange={handleOnChangeExample}>
+        {examples.map((example, index) => (
+          <option key={example.label} value={index}>
+            {example.label}
+          </option>
+        ))}
+      </select>
+      <div className="example-wrapper">
+        <RecoilRoot>{examples[currentExampleIndex].content}</RecoilRoot>
+      </div>
     </div>
   );
 }

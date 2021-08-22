@@ -30,7 +30,16 @@
   }
 }
 
-input {
+.example-wrapper {
+  margin-top: 50px;
+  padding: 30px;
+  background-color: #282c34;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+input,
+button {
   height: 45px;
   border: 1px solid white;
   border-radius: 6px;
@@ -38,4 +47,18 @@ input {
   outline: none;
   padding: 12px;
   box-sizing: border-box;
+}
+
+button {
+  background-color: green;
+}
+
+.spacing {
+  margin: 5px;
+}
+
+input[type="checkbox"] {
+  height: 25px;
+  align-self: center;
+  vertical-align: sub;
 }
