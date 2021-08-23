@@ -78,3 +78,7 @@ input[type="checkbox"] {
   border-radius: 50%;
   margin: auto;
 }
+
+ul li {
+  text-align: left;
+}
