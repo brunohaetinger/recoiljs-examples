@@ -1,15 +1,17 @@
 import { useRecoilValue } from "recoil";
-import { todoListState } from "../../recoil/toDo/atoms";
+import { filteredTodoListState } from "../../recoil/toDo/selectors";
 import { TodoItem } from "./ToDoItem";
 import { TodoItemCreator } from "./ToDoItemCreator";
+import { TodoListFilters } from "./ToDoListFilters";
+import { TodoListStats } from "./ToDoListStats";
 
 export function ToDoList() {
-  const todoList = useRecoilValue(todoListState);
+  const todoList = useRecoilValue(filteredTodoListState);
 
   return (
     <>
-      {/* <TodoListStats /> */}
-      {/* <TodoListFilters /> */}
+      <TodoListStats />
+      <TodoListFilters />
       <TodoItemCreator />
 
       {todoList.map((todoItem) => (

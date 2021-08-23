@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { RecoilRoot } from "recoil";
 import "./App.css";
+import { AsyncProfile } from "./examples/AsyncProfile";
 import { CharacterCounter } from "./examples/CharacterCounter";
 import { ToDo } from "./examples/ToDo";
 
@@ -11,6 +12,7 @@ function App() {
     () => [
       { label: "Character Counter", content: <CharacterCounter /> },
       { label: "To Do", content: <ToDo /> },
+      { label: "Async Profile", content: <AsyncProfile /> },
     ],
     []
   );

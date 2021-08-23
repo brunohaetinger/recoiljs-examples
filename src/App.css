@@ -62,3 +62,19 @@ input[type="checkbox"] {
   align-self: center;
   vertical-align: sub;
 }
+
+.error-message {
+  color: tomato;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-picture {
+  height: auto;
+  width: 185px;
+  border-radius: 50%;
+  margin: auto;
+}
